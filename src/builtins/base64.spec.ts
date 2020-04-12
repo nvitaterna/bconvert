@@ -1,0 +1,49 @@
+import { expect } from 'chai';
+
+import { commonTestsFrom, commonTestsTo } from '../index.spec';
+import { charset, convertFrom, convertTo } from './base64';
+
+describe('convert from base64', () => {
+  const tests = [
+    ...commonTestsFrom(charset),
+    {
+      input: '-U5',
+      output: -1337,
+    },
+    {
+      input: 'O.BR64UeuFHr',
+      output: 14.02,
+    },
+  ];
+
+  tests.forEach(({ output, input }) => {
+    it(`should return "${output}" when converting from ${input}`, () => {
+      expect(convertFrom(input)).to.equal(output);
+    });
+  });
+});
+
+describe('convert to base64', () => {
+  const tests: {
+    input: number,
+    output: string,
+    precision?: number
+  }[] = [
+    ...commonTestsTo(charset),
+    {
+      input: -1337,
+      output: '-U5',
+    },
+    {
+      input: 14.02,
+      output: 'O.BR64UeuFH',
+      precision: 9,
+    },
+  ];
+
+  tests.forEach(({ input, output, precision }) => {
+    it(`should return "${output}" when converting from ${input}`, () => {
+      expect(convertTo(input, precision)).to.equal(output);
+    });
+  });
+});

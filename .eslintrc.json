@@ -1,0 +1,33 @@
+{
+    "env": {
+      "es6": true,
+      "node": true,
+      "mocha": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "project": "tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "airbnb-typescript/base"
+    ],
+    "rules": {
+      "max-len": [
+        "off"
+      ],
+      "no-param-reassign": [
+        "off"
+      ],
+      "no-console": "off",
+      "no-debugger": "off"
+    },
+    "ignorePatterns": [
+      "dist",
+      "public",
+      "docs*"
+    ]
+  }

@@ -1,7 +1,7 @@
 {
   "name": "bconvert",
   "version": "1.0.0",
-  "description": "Convert to and from any base, including custom ones",
+  "description": "This is a library to convert to and from any base, including custom character sets. No dependencies.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:nvitaterna/bconvert.git",
@@ -13,10 +13,10 @@
     "docs": "shx rm -rf docs && typedoc --plugin typedoc-plugin-markdown --namedAnchors --hideBreadcrumbs",
     "lint": "eslint --ext .ts src/.",
     "test": "shx rm -rf .nyc_output coverage && nyc mocha -r ts-node/register src/**/*.spec.ts",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run lint && npm run test",
-    "preversion": "npm run lint && npm run test && npm run build",
-    "version": "npm run docs && git add .",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint && yarn test",
+    "preversion": "yarn lint && yarn test && yarn build",
+    "version": "yarn docs && git add .",
     "postversion": "git push && git push --tags"
   },
   "dependencies": {},

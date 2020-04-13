@@ -1,13 +1,13 @@
 import * as utils from '../utils';
 
 /**
- * base62 charset 0-9 A-Z a-z
+ * binary charset
  */
-export const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+export const charset = '01';
 
 /**
- * Function to convert from base10 to base62
- * @param value - number in base10 to convert to base62
+ * Function to convert from base10 to binary
+ * @param value - number in base10 to convert to binary
  * @param precision - number of digits to appear after the decimal point if converting decimals
  */
 export const convertTo = function convertTo(value: number, precision = 10) {
@@ -15,8 +15,8 @@ export const convertTo = function convertTo(value: number, precision = 10) {
 };
 
 /**
- * Function to convert from base62 to base10
- * @param value - string in base62 to convert to base10
+ * Function to convert from binary to base10
+ * @param value - string in binary to convert to base10
  */
 export const convertFrom = function convertFrom(value: string) {
   return utils.convertFrom(value, charset);

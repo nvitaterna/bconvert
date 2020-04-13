@@ -1,25 +1,25 @@
 import { expect } from 'chai';
-import convertFrom from './convertFrom';
-import { commonTestsFrom as commonTests } from '../index.spec';
+import { convertTo } from '../dist';
+import { commonTestsTo as commonTests } from './common';
 
 const binary = '01';
 
 describe('Convert To', () => {
   describe('binary', () => {
-    const convert = (value: string) => convertFrom(value, binary);
+    const convert = (value: number) => convertTo(value, binary);
     const tests = [
       ...commonTests(binary),
       {
-        input: '-10100111001',
-        output: -1337,
+        input: -1337,
+        output: '-10100111001',
       },
       {
-        input: '1011.1011',
-        output: 11.6875,
+        input: 11.6875,
+        output: '1011.1011',
       },
     ];
 
-    tests.forEach(({ output, input }) => {
+    tests.forEach(({ input, output }) => {
       it(`should return "${output}" when converting from ${input}`, () => {
         expect(convert(input)).to.equal(output);
       });

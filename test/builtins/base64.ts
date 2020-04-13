@@ -1,18 +1,18 @@
 import { expect } from 'chai';
 
-import { commonTestsFrom, commonTestsTo } from '../index.spec';
-import { charset, convertFrom, convertTo } from './base62';
+import { commonTestsFrom, commonTestsTo } from '../common';
+import { charset, convertFrom, convertTo } from '../../src/builtins/base64';
 
-describe('convert from base62', () => {
+describe('convert from base64', () => {
   const tests = [
     ...commonTestsFrom(charset),
     {
-      input: '-LZ',
+      input: '-U5',
       output: -1337,
     },
     {
-      input: 'BuR.7V7geffAPn',
-      output: 45783.121,
+      input: 'O.BR64UeuFHr',
+      output: 14.02,
     },
   ];
 
@@ -23,7 +23,7 @@ describe('convert from base62', () => {
   });
 });
 
-describe('convert to base62', () => {
+describe('convert to base64', () => {
   const tests: {
     input: number,
     output: string,
@@ -32,12 +32,12 @@ describe('convert to base62', () => {
     ...commonTestsTo(charset),
     {
       input: -1337,
-      output: '-LZ',
+      output: '-U5',
     },
     {
-      input: 45783.121,
-      output: 'BuR.7V7gef',
-      precision: 6,
+      input: 14.02,
+      output: 'O.BR64UeuFH',
+      precision: 9,
     },
   ];
 

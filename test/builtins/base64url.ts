@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
-import { commonTestsFrom, commonTestsTo } from '../index.spec';
-import { charset, convertFrom, convertTo } from './base64url';
+import { commonTestsFrom, commonTestsTo } from '../common';
+import { charset, convertFrom, convertTo } from '../../src/builtins/base64url';
 
 describe('convert from base64url', () => {
   const tests = [

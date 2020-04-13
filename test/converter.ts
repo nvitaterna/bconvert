@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { Converter } from '../src';
-import { charset as base64 } from '../dist/builtins/base64';
+import { charset as base64 } from '../src/builtins/base64';
 
-describe('Convert to base16', () => {
+describe('Converter convert to base16', () => {
   const charsetA = '0123456789ABCDEF';
   describe('from binary', () => {
     const charsetB = '01';
@@ -27,7 +27,7 @@ describe('Convert to base16', () => {
   });
 });
 
-describe('Convert from base8', () => {
+describe('Converter convert from base8', () => {
   const charsetA = '01234567';
   describe('from base64', () => {
     const charsetB = base64;

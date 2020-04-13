@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { convertFrom } from '../dist';
+import { convertFrom } from '../src';
 import { commonTestsFrom as commonTests } from './common';
 
 const binary = '01';

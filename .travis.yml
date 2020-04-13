@@ -10,6 +10,9 @@ after_success:
   - yarn coverage
 cache: yarn
 install: yarn
+branches:
+  only:
+  - master
 deploy:
   skip_cleanup: true
   provider: npm

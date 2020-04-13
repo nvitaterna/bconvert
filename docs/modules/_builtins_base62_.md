@@ -18,9 +18,9 @@
 
 • **charset**: *"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"* = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-Defined in builtins/base62.ts:6
+*Defined in [builtins/base62.ts:6](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base62.ts#L6)*
 
-base62 charset
+base62 charset 0-9 A-Z a-z
 
 ## Functions
 
@@ -28,7 +28,7 @@ base62 charset
 
 ▸ **convertFrom**(`value`: string): *number*
 
-Defined in builtins/base62.ts:21
+*Defined in [builtins/base62.ts:21](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base62.ts#L21)*
 
 Function to convert from base62 to base10
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **convertTo**(`value`: number, `precision`: number): *string*
 
-Defined in builtins/base62.ts:13
+*Defined in [builtins/base62.ts:13](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base62.ts#L13)*
 
 Function to convert from base10 to base62
 

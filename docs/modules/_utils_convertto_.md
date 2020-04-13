@@ -13,7 +13,7 @@
 
 ▸ **convertTo**(`value`: number, `charset`: string, `precision`: number): *string*
 
-Defined in utils/convertTo.ts:8
+*Defined in [utils/convertTo.ts:8](https://github.com/nvitaterna/bconvert/blob/master/src/utils/convertTo.ts#L8)*
 
 Function to convert to any base from base10
 

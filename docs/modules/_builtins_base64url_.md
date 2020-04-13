@@ -18,7 +18,7 @@
 
 • **charset**: *"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"* = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 
-Defined in builtins/base64url.ts:9
+*Defined in [builtins/base64url.ts:9](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base64url.ts#L9)*
 
 base64url charset
 
@@ -28,7 +28,7 @@ base64url charset
 
 ▸ **convertFrom**(`value`: string): *number*
 
-Defined in builtins/base64url.ts:27
+*Defined in [builtins/base64url.ts:27](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base64url.ts#L27)*
 
 Function to convert from base64url to base10
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **convertTo**(`value`: number, `precision`: number): *string*
 
-Defined in builtins/base64url.ts:16
+*Defined in [builtins/base64url.ts:16](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base64url.ts#L16)*
 
 Function to convert from base10 to base64url
 

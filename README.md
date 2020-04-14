@@ -1,11 +1,9 @@
 # bconvert
 
-[![NPM](https://nodei.co/npm/bconvert.png)](https://nodei.co/npm/bconvert/)
-
-[![dependencies Status](https://david-dm.org/nvitaterna/bconvert/status.svg)](https://david-dm.org/nvitaterna/bconvert)
-[![Coverage Status](https://coveralls.io/repos/github/nvitaterna/bconvert/badge.svg?branch=master)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
-[![Build Status](https://travis-ci.org/nvitaterna/bconvert.svg?branch=master)](https://travis-ci.org/nvitaterna/bconvert)
-[![npm version](https://badge.fury.io/js/bconvert.svg)](https://badge.fury.io/js/bconvert)
+[![dependencies Status](https://flat.badgen.net/david/dep/nvitaterna/bconvert)](https://david-dm.org/nvitaterna/bconvert)
+[![Coverage Status](https://flat.badgen.net/coveralls/c/github/nvitaterna/bconvert/master)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
+[![Build Status](https://flat.badgen.net/travis/nvitaterna/bconvert/master)](https://travis-ci.org/nvitaterna/bconvert)
+[![npm version](https://flat.badgen.net/npm/v/bconvert)](https://www.npmjs.com/package/bconvert)
 
 ```js
 const bconvert = require('bconvert');

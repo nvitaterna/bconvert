@@ -1,11 +1,9 @@
 # bconvert
 
-[![NPM](https://nodei.co/npm/bconvert.png)](https://nodei.co/npm/bconvert/)
-
-[![dependencies Status](https://img.shields.io/david/nvitaterna/bconvert?style=flat-square)](https://david-dm.org/nvitaterna/bconvert)
-[![Coverage Status](https://img.shields.io/coveralls/github/nvitaterna/bconvert/master?style=flat-square)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
-[![Build Status](https://img.shields.io/travis/nvitaterna/bconvert/master?style=flat-square)](https://travis-ci.org/nvitaterna/bconvert)
-[![npm version](https://img.shields.io/npm/v/bconvert?style=flat-square)](https://www.npmjs.com/package/bconvert)
+[![dependencies Status](https://flat.badgen.net/david/dep/nvitaterna/bconvert)](https://david-dm.org/nvitaterna/bconvert)
+[![Coverage Status](https://flat.badgen.net/coveralls/c/github/nvitaterna/bconvert/master)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
+[![Build Status](https://flat.badgen.net/travis/nvitaterna/bconvert/master)](https://travis-ci.org/nvitaterna/bconvert)
+[![npm version](https://flat.badgen.net/npm/v/bconvert)](https://www.npmjs.com/package/bconvert)
 
 
 ```js

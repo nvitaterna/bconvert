@@ -5,7 +5,6 @@
 [![Build Status](https://flat.badgen.net/travis/nvitaterna/bconvert/master)](https://travis-ci.org/nvitaterna/bconvert)
 [![npm version](https://flat.badgen.net/npm/v/bconvert)](https://www.npmjs.com/package/bconvert)
 
-
 ```js
 const bconvert = require('bconvert');
 

@@ -2,11 +2,10 @@
 
 [![NPM](https://nodei.co/npm/bconvert.png)](https://nodei.co/npm/bconvert/)
 
-[![dependencies Status](https://david-dm.org/nvitaterna/bconvert/status.svg)](https://david-dm.org/nvitaterna/bconvert)
-[![Coverage Status](https://coveralls.io/repos/github/nvitaterna/bconvert/badge.svg?branch=master)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
-[![Build Status](https://travis-ci.org/nvitaterna/bconvert.svg?branch=master)](https://travis-ci.org/nvitaterna/bconvert)
-[![npm version](https://badge.fury.io/js/bconvert.svg)](https://badge.fury.io/js/bconvert)
-![npm bundle size](https://img.shields.io/bundlephobia/min/bconvert)
+[![dependencies Status](https://img.shields.io/david/nvitaterna/bconvert?style=flat-square)](https://david-dm.org/nvitaterna/bconvert)
+[![Coverage Status](https://img.shields.io/coveralls/github/nvitaterna/bconvert/master?style=flat-square)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
+[![Build Status](https://img.shields.io/travis/nvitaterna/bconvert/master?style=flat-square)](https://travis-ci.org/nvitaterna/bconvert)
+[![npm version](https://img.shields.io/npm/v/bconvert?style=flat-square)](https://badge.fury.io/js/bconvert)
 
 
 ```js

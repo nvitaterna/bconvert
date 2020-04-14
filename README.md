@@ -5,7 +5,7 @@
 [![dependencies Status](https://img.shields.io/david/nvitaterna/bconvert?style=flat-square)](https://david-dm.org/nvitaterna/bconvert)
 [![Coverage Status](https://img.shields.io/coveralls/github/nvitaterna/bconvert/master?style=flat-square)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
 [![Build Status](https://img.shields.io/travis/nvitaterna/bconvert/master?style=flat-square)](https://travis-ci.org/nvitaterna/bconvert)
-[![npm version](https://img.shields.io/npm/v/bconvert?style=flat-square)](https://badge.fury.io/js/bconvert)
+[![npm version](https://img.shields.io/npm/v/bconvert?style=flat-square)](https://www.npmjs.com/package/bconvert)
 
 
 ```js

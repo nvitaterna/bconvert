@@ -1,6 +1,6 @@
 {
   "name": "bconvert",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This is a library to convert to and from any base, including custom character sets. No dependencies.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -6,7 +6,7 @@ describe('Converter convert to base16', () => {
   const charsetA = '0123456789ABCDEF';
   describe('from binary', () => {
     const charsetB = '01';
-    const converter = new Converter(charsetA, charsetB, 10);
+    const converter = new Converter(charsetA, charsetB/* , 10 */);
     const tests = [
       {
         input: '1100',
@@ -14,9 +14,6 @@ describe('Converter convert to base16', () => {
       }, {
         input: '111001',
         output: '39',
-      }, {
-        input: '1011.1',
-        output: 'B.8',
       },
     ];
     tests.forEach(({ output, input }) => {
@@ -34,11 +31,8 @@ describe('Converter convert from base8', () => {
     const converter = new Converter(charsetB, charsetA);
     const tests = [
       {
-        input: 'I/.I',
-        output: '1077.1',
-      }, {
-        input: 'H.E',
-        output: '7.04',
+        input: 'I/',
+        output: '1077',
       }, {
         input: 'BA',
         output: '100',

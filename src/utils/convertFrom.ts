@@ -8,28 +8,27 @@ export default function convertFrom(value: number | string, charset: string) {
   const radix = charset.length;
   let result = 0;
   const strValue = value.toString();
+
+  if (strValue.includes('.')) {
+    throw new Error('This library cannot convert fractions at this time.');
+  }
+
   const negative = strValue[0] === '-';
   const absValue = strValue.replace('-', '');
 
-  const intValue = absValue.split('.')[0];
-  const decimalvalue = absValue.split('.')[1];
-
-  intValue.split('').forEach((part) => {
-    result = result * radix + charset.indexOf(part);
+  absValue.split('').forEach((valChar) => {
+    if (!charset.includes(valChar)) {
+      throw new Error(`Value must only consist of characters from the given charset. "${valChar}" is not in ${charset}`);
+    }
   });
 
-  if (decimalvalue) {
-    let decimalResult = 0;
-    decimalvalue.split('').forEach((part, i) => {
-      decimalResult = (charset.indexOf(part) / (radix ** (i + 1))) + decimalResult;
-    });
-    result += decimalResult;
-  }
+  absValue.split('').forEach((part) => {
+    result = result * radix + charset.indexOf(part);
+  });
 
   if (negative) {
     result *= -1;
   }
-
 
   return result;
 }

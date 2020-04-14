@@ -8,10 +8,9 @@ export const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUV';
 /**
  * Function to convert from base10 to base32hex
  * @param value - number in base10 to convert to base32hex
- * @param precision - number of digits to appear after the decimal point if converting decimals
  */
-export const convertTo = function convertTo(value: number, precision = 10) {
-  return utils.convertTo(value, charset, precision);
+export const convertTo = function convertTo(value: number) {
+  return utils.convertTo(value, charset);
 };
 
 /**

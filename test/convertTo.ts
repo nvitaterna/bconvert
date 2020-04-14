@@ -4,7 +4,7 @@ import { commonTestsTo as commonTests } from './common';
 
 const binary = '01';
 
-describe('Convert To', () => {
+describe('convertTo', () => {
   describe('binary', () => {
     const convert = (value: number) => convertTo(value, binary);
     const tests = [
@@ -15,14 +15,20 @@ describe('Convert To', () => {
       },
       {
         input: 11.6875,
-        output: '1011.1011',
+        output: 'blah',
       },
     ];
 
     tests.forEach(({ input, output }) => {
-      it(`should return "${output}" when converting from ${input}`, () => {
-        expect(convert(input)).to.equal(output);
-      });
+      if (input.toString().includes('.')) {
+        it('should throw error for trying to convert a fraction', () => {
+          expect(() => convert(input)).to.throw();
+        });
+      } else {
+        it(`should return "${output}" when converting from ${input}`, () => {
+          expect(convert(input)).to.equal(output);
+        });
+      }
     });
   });
 });

@@ -1,18 +1,18 @@
 import { expect } from 'chai';
 
 import { commonTestsFrom, commonTestsTo } from '../common';
-import { charset, convertFrom, convertTo } from '../../src/builtins/base64';
+import { charset, convertFrom, convertTo } from '../../src/builtins/base32hex';
 
-describe('convert from base64', () => {
+describe('convert from base32hex', () => {
   const tests = [
     ...commonTestsFrom(charset),
     {
-      input: '-U5',
-      output: -1337,
+      input: '-BJJ',
+      output: -11891,
     },
     // {
-    //   input: 'O.BR64UeuFHr',
-    //   output: 14.02,
+    //   input: '36B.AB',
+    //   output: 45783.121,
     // },
   ];
 
@@ -23,7 +23,7 @@ describe('convert from base64', () => {
   });
 });
 
-describe('convert to base64', () => {
+describe('convert to base32hex', () => {
   const tests: {
     input: number,
     output: string,
@@ -31,7 +31,7 @@ describe('convert to base64', () => {
     ...commonTestsTo(charset),
     {
       input: -1337,
-      output: '-U5',
+      output: '-19P',
     },
   ];
 

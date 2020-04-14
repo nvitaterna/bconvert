@@ -1,14 +1,13 @@
 import { expect } from 'chai';
 import { convertFrom } from '../src';
 import { commonTestsFrom as commonTests } from './common';
+import { charset } from '../src/builtins/binary';
 
-const binary = '01';
-
-describe('Convert To', () => {
+describe('convertFrom Convert To', () => {
   describe('binary', () => {
-    const convert = (value: string) => convertFrom(value, binary);
+    const convert = (value: string) => convertFrom(value, charset);
     const tests = [
-      ...commonTests(binary),
+      ...commonTests(charset),
       {
         input: '-10100111001',
         output: -1337,
@@ -17,12 +16,26 @@ describe('Convert To', () => {
         input: '1011.1011',
         output: 11.6875,
       },
+      {
+        input: '4871',
+        output: 0,
+      },
     ];
 
     tests.forEach(({ output, input }) => {
-      it(`should return "${output}" when converting from ${input}`, () => {
-        expect(convert(input)).to.equal(output);
-      });
+      if (input.includes('.')) {
+        it('should throw error for trying to convert a fraction', () => {
+          expect(() => convert(input)).to.throw();
+        });
+      } else if (!input.replace('-', '').split('').every((x) => charset.includes(x))) {
+        it('should throw error for trying to convert characters that are not in the base', () => {
+          expect(() => convert(input)).to.throw();
+        });
+      } else {
+        it(`should return "${output}" when converting from ${input}`, () => {
+          expect(convert(input)).to.equal(output);
+        });
+      }
     });
   });
 });

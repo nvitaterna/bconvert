@@ -11,19 +11,18 @@
 
 ### <a id="convertto" name="convertto"></a>  convertTo
 
-▸ **convertTo**(`value`: number, `charset`: string, `precision`: number): *string*
+▸ **convertTo**(`value`: number, `charset`: string): *string*
 
-Defined in utils/convertTo.ts:8
+*Defined in [utils/convertTo.ts:7](https://github.com/nvitaterna/bconvert/blob/master/src/utils/convertTo.ts#L7)*
 
 Function to convert to any base from base10
 
 **Parameters:**
 
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`value` | number | - | number in base10 to convert to the given base |
-`charset` | string | - | charset of the base you want to convert to |
-`precision` | number | 10 | number of digits to appear after the decimal point if converting decimals |
+Name | Type | Description |
+------ | ------ | ------ |
+`value` | number | number in base10 to convert to the given base |
+`charset` | string | charset of the base you want to convert to |
 
 **Returns:** *string*
 

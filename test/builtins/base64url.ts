@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
-import { commonTestsFrom, commonTestsTo } from '../index.spec';
-import { charset, convertFrom, convertTo } from './base64url';
+import { commonTestsFrom, commonTestsTo } from '../common';
+import { charset, convertFrom, convertTo } from '../../src/builtins/base64url';
 
 describe('convert from base64url', () => {
   const tests = [
@@ -10,10 +10,10 @@ describe('convert from base64url', () => {
       input: 'U5',
       output: 1337,
     },
-    {
-      input: 'O.BR64UeuFHr',
-      output: 14.02,
-    },
+    // {
+    //   input: 'O.BR64UeuFHr',
+    //   output: 14.02,
+    // },
   ];
 
   // can't do negative or decimals for base64url
@@ -28,24 +28,18 @@ describe('convert to base64url', () => {
   const tests: {
     input: number,
     output: string,
-    precision?: number
   }[] = [
     ...commonTestsTo(charset),
     {
       input: 1337,
       output: 'U5',
     },
-    {
-      input: 14.02,
-      output: 'O.BR',
-      precision: 2,
-    },
   ];
 
-  tests.forEach(({ input, output, precision }) => {
+  tests.forEach(({ input, output }) => {
     if (input < 0 || input.toString().split('.')[1] !== undefined) {
       it('should throw error for trying to convert invalid number', () => {
-        expect(() => convertTo(input, precision)).to.throw();
+        expect(() => convertTo(input)).to.throw();
       });
     } else {
       it(`should return "${output}" when converting from ${input}`, () => {

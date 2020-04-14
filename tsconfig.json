@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDirs": ["src", "test"],
     "strict": true,
     "esModuleInterop": true,
     "sourceMap": true,
@@ -19,7 +19,6 @@
     "mode": "modules",
     "out": "docs",
     "exclude": [
-      "**/*.spec.ts",
       "**/index.ts",
       "src/builtins/index.ts",
       "src/utils/index.ts"

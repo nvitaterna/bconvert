@@ -1,19 +1,19 @@
 import { expect } from 'chai';
 
-import { commonTestsFrom, commonTestsTo } from '../index.spec';
-import { charset, convertFrom, convertTo } from './base62';
+import { commonTestsFrom, commonTestsTo } from '../common';
+import { charset, convertFrom, convertTo } from '../../src/builtins/base64';
 
-describe('convert from base62', () => {
+describe('convert from base64', () => {
   const tests = [
     ...commonTestsFrom(charset),
     {
-      input: '-LZ',
+      input: '-U5',
       output: -1337,
     },
-    {
-      input: 'BuR.7V7geffAPn',
-      output: 45783.121,
-    },
+    // {
+    //   input: 'O.BR64UeuFHr',
+    //   output: 14.02,
+    // },
   ];
 
   tests.forEach(({ output, input }) => {
@@ -23,27 +23,21 @@ describe('convert from base62', () => {
   });
 });
 
-describe('convert to base62', () => {
+describe('convert to base64', () => {
   const tests: {
     input: number,
     output: string,
-    precision?: number
   }[] = [
     ...commonTestsTo(charset),
     {
       input: -1337,
-      output: '-LZ',
-    },
-    {
-      input: 45783.121,
-      output: 'BuR.7V7gef',
-      precision: 6,
+      output: '-U5',
     },
   ];
 
-  tests.forEach(({ input, output, precision }) => {
+  tests.forEach(({ input, output }) => {
     it(`should return "${output}" when converting from ${input}`, () => {
-      expect(convertTo(input, precision)).to.equal(output);
+      expect(convertTo(input)).to.equal(output);
     });
   });
 });

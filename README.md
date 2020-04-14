@@ -3,7 +3,7 @@
 [![NPM](https://nodei.co/npm/bconvert.png)](https://nodei.co/npm/bconvert/)
 
 [![dependencies Status](https://david-dm.org/nvitaterna/bconvert/status.svg)](https://david-dm.org/nvitaterna/bconvert)
-[![Coverage Status](https://coveralls.io/repos/github/nvitaterna/bconvert/badge.svg?branch=travisci)](https://coveralls.io/github/nvitaterna/bconvert?branch=travisci)
+[![Coverage Status](https://coveralls.io/repos/github/nvitaterna/bconvert/badge.svg?branch=master)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
 [![Build Status](https://travis-ci.org/nvitaterna/bconvert.svg?branch=master)](https://travis-ci.org/nvitaterna/bconvert)
 [![npm version](https://badge.fury.io/js/bconvert.svg)](https://badge.fury.io/js/bconvert)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/bconvert)

@@ -11,13 +11,12 @@ export const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
 /**
  * Function to convert from base10 to base64url
  * @param value - number in base10 to convert to base64url
- * @param precision - number of digits to appear after the decimal point if converting decimals
  */
-export const convertTo = function convertTo(value: number, precision = 10) {
+export const convertTo = function convertTo(value: number) {
   if (value < 0 || value.toString().split('.')[1] !== undefined) {
     throw new Error('base64url can only convert positive integers');
   }
-  return utils.convertTo(value, charset, precision);
+  return utils.convertTo(value, charset);
 };
 
 /**

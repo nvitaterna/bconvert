@@ -18,9 +18,9 @@
 
 • **charset**: *"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"* = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-Defined in builtins/base62.ts:6
+*Defined in [builtins/base62.ts:6](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base62.ts#L6)*
 
-base62 charset
+base62 charset 0-9 A-Z a-z
 
 ## Functions
 
@@ -28,7 +28,7 @@ base62 charset
 
 ▸ **convertFrom**(`value`: string): *number*
 
-Defined in builtins/base62.ts:21
+*Defined in [builtins/base62.ts:20](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base62.ts#L20)*
 
 Function to convert from base62 to base10
 
@@ -44,17 +44,16 @@ ___
 
 ### <a id="const-convertto" name="const-convertto"></a> `Const` convertTo
 
-▸ **convertTo**(`value`: number, `precision`: number): *string*
+▸ **convertTo**(`value`: number): *string*
 
-Defined in builtins/base62.ts:13
+*Defined in [builtins/base62.ts:12](https://github.com/nvitaterna/bconvert/blob/master/src/builtins/base62.ts#L12)*
 
 Function to convert from base10 to base62
 
 **Parameters:**
 
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`value` | number | - | number in base10 to convert to base62 |
-`precision` | number | 10 | number of digits to appear after the decimal point if converting decimals  |
+Name | Type | Description |
+------ | ------ | ------ |
+`value` | number | number in base10 to convert to base62  |
 
 **Returns:** *string*

@@ -11,7 +11,7 @@
   "scripts": {
     "build": "shx rm -rf dist && tsc -p tsconfig.build.json",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "docs": "shx rm -rf docs && typedoc --gitRevision master --readme none --tsconfig tsconfig.build.json --plugin typedoc-plugin-markdown --namedAnc rs --hideBreadcrumbs",
+    "docs": "shx rm -rf docs && typedoc --gitRevision master --readme none --tsconfig tsconfig.build.json --plugin typedoc-plugin-markdown --namedAnchors --hideBreadcrumbs",
     "lint": "eslint --ext .ts src/.",
     "test": "shx rm -rf .nyc_output coverage && nyc mocha -r ts-node/register test/**/*.ts test/*.ts",
     "test:single": "mocha -r ts-node/register",

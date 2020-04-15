@@ -76,3 +76,36 @@ console.log(binaryHexConverter.convertTo('101101'));
 console.log(binaryHexConverter.convertFrom('FFE1'));
 // 1111111111100001
 ```
+
+### Built-in Bases
+The following number base systems are included in this package:
+```
+binary
+octal
+hexadecimal
+base32
+base32hex
+base57
+base60
+base60new
+base62
+base64
+base64url
+```
+
+To use these builtins, you may import/require them directly or access them at `bconvert[builtinName]`. All builtins export their charset, as well as `convertTo` and `convertFrom`:
+```js
+const hexadecimal = require('bconvert/builtins/hexadecimal');
+// or
+const bconvert = require('bconvert');
+hexadecimal = bconvert.hexadecimal;
+
+hexadecimal.charset;
+// 0123456789ABCDEF
+
+hexadecimal.convertTo(28);
+// 1C
+
+hexadecimal.convertFrom('1337');
+// 4919
+```

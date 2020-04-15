@@ -4,7 +4,6 @@ import * as builtins from './builtins';
 
 export { default as Converter } from './converter';
 export { convertFrom, convertTo } from './utils';
-export { base62, base64, base64url } from './builtins';
 
 export default {
   Converter,

@@ -5,12 +5,13 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:nvitaterna/bconvert.git",
+  "homepage": "https://github.com/nvitaterna/bconvert",
   "author": "Nicolas Vitaterna <nvitaterna@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "shx rm -rf dist && tsc -p tsconfig.build.json",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "docs": "shx rm -rf docs && typedoc --gitRevision master --readme none --tsconfig tsconfig.build.json --plugin typedoc-plugin-markdown --namedAnchors --hideBreadcrumbs",
+    "docs": "shx rm -rf docs && typedoc --gitRevision master --readme none --tsconfig tsconfig.build.json --plugin typedoc-plugin-markdown --namedAnc rs --hideBreadcrumbs",
     "lint": "eslint --ext .ts src/.",
     "test": "shx rm -rf .nyc_output coverage && nyc mocha -r ts-node/register test/**/*.ts test/*.ts",
     "test:single": "mocha -r ts-node/register",
@@ -34,6 +35,7 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^7.2.1",
     "eslint-plugin-import": "^2.20.2",
+    "husky": "^4.2.5",
     "mocha": "^7.1.1",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^15.0.1",
@@ -58,5 +60,10 @@
   ],
   "files": [
     "/dist"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test && npm run build"
+    }
+  }
 }

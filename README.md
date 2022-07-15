@@ -46,7 +46,7 @@ After requiring or importing bconvert you have access to the following:
 ```js
 const charset = '01';
 
-console.log(bconvert.convertTo(5, charset);)
+console.log(bconvert.convertTo(5, charset));
 // 101
 ```
 
@@ -55,7 +55,7 @@ console.log(bconvert.convertTo(5, charset);)
 const charset = bconvert.base64.charset;
 // built in base64 charset
 
-console.log(bconvert.convertFrom('U5', charset);)
+console.log(bconvert.convertFrom('U5', charset));
 // 1337
 ```
 

@@ -9,7 +9,7 @@ defaults: &defaults
     - image: circleci/node:16.13.1
 
 jobs:
-  install:
+  test:
     <<: *defaults
     steps:
       - checkout
@@ -18,16 +18,13 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: yarn install
+      - run:
+          name: Run Tests
+          command: yarn test
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-  test:
-    <<: *defaults
-    steps:
-      - run:
-          name: Run Tests
-          command: yarn test
       - persist_to_workspace:
           root: ~/repo
           paths:
@@ -60,10 +57,7 @@ workflows:
   version: 2
   test-deploy:
     jobs:
-      - install
-      - test:
-          requires:
-            - install
+      - test
       - build:
           requires:
             - test

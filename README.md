@@ -1,20 +1,109 @@
-# typescript-starter
+# bconvert
 
-Typescript starter with linting, formatting, testing, and pre-commit hooks
+[![dependencies Status](https://flat.badgen.net/david/dep/nvitaterna/bconvert)](https://david-dm.org/nvitaterna/bconvert)
+[![Coverage Status](https://flat.badgen.net/coveralls/c/github/nvitaterna/bconvert/master)](https://coveralls.io/github/nvitaterna/bconvert?branch=master)
+[![Build Status](https://flat.badgen.net/travis/nvitaterna/bconvert/master)](https://travis-ci.org/nvitaterna/bconvert)
+[![npm version](https://flat.badgen.net/npm/v/bconvert)](https://www.npmjs.com/package/bconvert)
 
-## Getting Started
+```js
+const bconvert = require('bconvert');
 
-1. Click [here](https://github.com/nvitaterna/typescript-starter/generate) to use this template.
-2. Optionally install [Renovate](https://github.com/apps/renovate) to keep dependencies up to date.
-3. Run `yarn install` to install all dependencies.
-4. Run `yarn dev` to start `ts-node-dev` and watch for changes.
+const hexCharset = '0123456789ABCDEF';
 
-## Tools
+bconvert.convertTo(30, hexCharset);
+// 1E
+```
 
-* [CommitLint](https://github.com/conventional-changelog/commitlint) - Commitlint checks if your commit messages meet the conventional commit format.
-* [ESLint](https://github.com/eslint/eslint) - ESLint statically analyzes your code to quickly find problems.
-* [Husky](https://github.com/typicode/husky) - Husky is a tool that makes it easy to manage git hooks.
-* [Jest](https://github.com/facebook/jest) - Jest is a javascript testing framework.
-* [lint-staged](https://github.com/okonet/lint-staged) - lint-staged makes it easy to run commands against staged files
-* [Prettier](https://github.com/prettier/prettier) - Prettier is an opinionated code formatter.
-* [Renovate](https://github.com/renovatebot/renovate) - Renovate automates dependency updates.
+This is a library to convert to and from any base, including custom character sets. No dependencies.
+
+## Install
+
+bconvert is a [Node.js](https://nodejs.org/en/) module available through the [npm registry](https://www.npmjs.com/). You can install bconvert in your project's directory like any other package:
+
+NPM  
+`npm i bconvert`
+
+Yarn  
+`yarn add bconvert`
+
+## Documentation
+
+```js
+const bconvert = require('bconvert');
+```
+or  
+```js
+import bconvert from 'bconvert';
+```
+
+After requiring or importing bconvert you have access to the following:
+
+### Converting via base10
+
+#### Convert to any base
+
+```js
+const charset = '01';
+
+console.log(bconvert.convertTo(5, charset);)
+// 101
+```
+
+#### Convert from any base
+```js
+const charset = bconvert.base64.charset;
+// built in base64 charset
+
+console.log(bconvert.convertFrom('U5', charset);)
+// 1337
+```
+
+### Converting between bases
+```js
+const Converter = bconvert.Converter;
+
+const charsetTo = '0123456789ABCDEF';
+
+const charsetFrom = '01';
+
+const binaryHexConverter = new Converter(charsetTo, charsetFrom);
+
+console.log(binaryHexConverter.convertTo('101101'));
+// 2D
+
+console.log(binaryHexConverter.convertFrom('FFE1'));
+// 1111111111100001
+```
+
+### Built-in Bases
+The following number base systems are included in this package:
+```
+binary
+octal
+hexadecimal
+base32
+base32hex
+base57
+base60
+base60new
+base62
+base64
+base64url
+```
+
+To use these builtins, you may import/require them directly or access them at `bconvert[builtinName]`. All builtins export their charset, as well as `convertTo` and `convertFrom`:
+```js
+const hexadecimal = require('bconvert/builtins/hexadecimal');
+// or
+const bconvert = require('bconvert');
+hexadecimal = bconvert.hexadecimal;
+
+hexadecimal.charset;
+// 0123456789ABCDEF
+
+hexadecimal.convertTo(28);
+// 1C
+
+hexadecimal.convertFrom('1337');
+// 4919
+```

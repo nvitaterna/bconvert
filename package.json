@@ -10,7 +10,6 @@
   "license": "MIT",
   "scripts": {
     "build": "shx rm -rf dist && tsc -p tsconfig.build.json",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "docs": "shx rm -rf docs && typedoc --gitRevision master --readme none --tsconfig tsconfig.build.json --plugin typedoc-plugin-markdown --namedAnchors --hideBreadcrumbs",
     "lint": "eslint --cache --fix src",
     "format": "prettier --write 'src/**/*'",
@@ -20,19 +19,18 @@
     "prepublishOnly": "yarn lint && yarn test",
     "preversion": "yarn lint && yarn test && yarn build",
     "version": "yarn docs && git add .",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/expect": "^24.3.0",
     "@types/jest": "^28.1.5",
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "coveralls": "^3.1.1",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
@@ -41,7 +39,6 @@
     "husky": "^8.0.1",
     "jest": "^28.1.3",
     "lint-staged": "^13.0.3",
-    "nyc": "^15.1.0",
     "prettier": "^2.7.1",
     "shx": "^0.3.4",
     "ts-jest": "^28.0.6",

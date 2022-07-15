@@ -1,4 +1,4 @@
-import { commonTestsFrom, commonTestsTo } from '../../test-utils/common.test';
+import { commonTestsFrom, commonTestsTo } from '@test-utils/common.test';
 import { charset, convertFrom, convertTo } from '../../src/builtins/base64url';
 
 describe('convert from base64url', () => {

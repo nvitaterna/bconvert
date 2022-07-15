@@ -94,7 +94,7 @@ base64url
 
 To use these builtins, you may import/require them directly or access them at `bconvert[builtinName]`. All builtins export their charset, as well as `convertTo` and `convertFrom`:
 ```js
-import hexadecimal from 'bconvert/dist/builtins/hexadecimal';
+import * as hexadecimal from 'bconvert/dist/builtins/hexadecimal';
 // or
 import bconvert from 'bconvert';
 hexadecimal = bconvert.hexadecimal;

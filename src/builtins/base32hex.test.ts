@@ -1,4 +1,4 @@
-import { commonTestsFrom, commonTestsTo } from '../../test-utils/common.test';
+import { commonTestsFrom, commonTestsTo } from '@test-utils/common.test';
 import { charset, convertFrom, convertTo } from './base32hex';
 
 describe('convert from base32hex', () => {

@@ -1,5 +1,5 @@
 import { convertTo } from '../';
-import { commonTestsTo as commonTests } from '../../test-utils/common.test';
+import { commonTestsTo as commonTests } from '@test-utils/common.test';
 
 const binary = '01';
 

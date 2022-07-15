@@ -7,7 +7,7 @@
 
 
 ```js
-const bconvert = require('bconvert');
+import bconvert from 'bconvert';
 
 const hexCharset = '0123456789ABCDEF';
 
@@ -30,7 +30,7 @@ Yarn
 ## Documentation
 
 ```js
-const bconvert = require('bconvert');
+import bconvert from 'bconvert';
 ```
 or  
 ```js
@@ -94,9 +94,9 @@ base64url
 
 To use these builtins, you may import/require them directly or access them at `bconvert[builtinName]`. All builtins export their charset, as well as `convertTo` and `convertFrom`:
 ```js
-const hexadecimal = require('bconvert/builtins/hexadecimal');
+import hexadecimal from 'bconvert/dist/builtins/hexadecimal';
 // or
-const bconvert = require('bconvert');
+import bconvert from 'bconvert';
 hexadecimal = bconvert.hexadecimal;
 
 hexadecimal.charset;

@@ -1,5 +1,11 @@
-import * as base62 from './base62';
-import * as base64 from './base64';
-import * as base64url from './base64url';
-
-export { base62, base64, base64url };
+export * as base32 from './base32';
+export * as base32hex from './base32hex';
+export * as base57 from './base57';
+export * as base60 from './base60';
+export * as base60new from './base60new';
+export * as base62 from './base62';
+export * as base64 from './base64';
+export * as base64url from './base64url';
+export * as binary from './binary';
+export * as hexadecimal from './hexadecimal';
+export * as octal from './octal';

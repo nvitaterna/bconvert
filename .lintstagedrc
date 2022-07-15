@@ -2,7 +2,7 @@
   "*.ts": [
     "yarn eslint --fix",
     "yarn prettier --write",
-    "yarn jest --collectCoverageFrom $MODIFIED_FILES --findRelatedTests"
+    "yarn jest src"
   ],
   "*.json": [
     "yarn prettier --write"

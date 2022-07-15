@@ -47,12 +47,6 @@ jobs:
           override-ci-command: yarn
       - run: yarn build
       - run: yarn semantic-release
-      - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run:
-          name: Publish the package
-          command: npm publish
 workflows:
   version: 2
   test-deploy:

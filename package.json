@@ -13,7 +13,7 @@
     "docs": "shx rm -rf docs && typedoc --gitRevision master --readme none --tsconfig tsconfig.build.json --plugin typedoc-plugin-markdown --namedAnchors --hideBreadcrumbs",
     "lint": "eslint --cache --fix src",
     "format": "prettier --write 'src/**/*'",
-    "test": "shx rm -rf .nyc_output coverage && yarn jest src",
+    "test": "shx rm -rf coverage && yarn jest src",
     "test:single": "yarn jest",
     "prepare": "husky install",
     "prepublishOnly": "yarn lint && yarn test",

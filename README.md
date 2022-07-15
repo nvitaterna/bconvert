@@ -1,8 +1,8 @@
 # bconvert
 
-![CircleCI](https://img.shields.io/circleci/build/github/nvitaterna/bconvert?style=flat-square)
-![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen?style=flat-square)
-![npm](https://img.shields.io/npm/v/bconvert?style=flat-square)
+[![CircleCI](https://img.shields.io/circleci/build/github/nvitaterna/bconvert?style=flat-square)](https://app.circleci.com/pipelines/github/nvitaterna/bconvert)
+[![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen?style=flat-square)](https://www.npmjs.com/package/bconvert?activeTab=dependencies)
+[![npm](https://img.shields.io/npm/v/bconvert?style=flat-square)](https://www.npmjs.com/package/bconvert)
 [![GitHub license](https://img.shields.io/github/license/nvitaterna/bconvert?style=flat-square)](https://github.com/nvitaterna/bconvert/blob/master/LICENSE)
 
 

@@ -1,4 +1,4 @@
-import * as utils from '../utils';
+import * as utils from '@/utils';
 
 /**
  * base32hex charset 0-9 A-V

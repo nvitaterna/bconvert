@@ -1,4 +1,4 @@
-import * as utils from '../utils';
+import * as utils from '@/utils';
 
 /**
  * base57 charset 2-9 A-H J-N P-Z a-k m-z

@@ -1,4 +1,4 @@
-import { convertFrom, convertTo } from '../utils';
+import { convertFrom, convertTo } from '@/utils';
 
 /**
  * Converter class to convert between to different number bases

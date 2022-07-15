@@ -9,7 +9,11 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "declaration": true
+    "declaration": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@test-utils/*": ["./test-utils/*"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

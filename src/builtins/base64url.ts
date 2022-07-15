@@ -1,7 +1,7 @@
 /**
  * Built in base64url converter
  */
-import * as utils from '../utils';
+import * as utils from '@/utils';
 
 /**
  * base64url charset

@@ -11,9 +11,6 @@ const config: Config.InitialOptions = {
       statements: 80,
     },
   },
-  transform: {
-    '^.+\\.ts?$': 'ts-jest',
-  },
   testPathIgnorePatterns: ['test-utils'],
 };
 

@@ -1,9 +1,6 @@
 {
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
-  },
-  "search.exclude": {
-    "**/docs": true,
-    "**/.vscode": true
   }
 }

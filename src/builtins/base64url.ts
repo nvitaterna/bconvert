@@ -6,7 +6,8 @@ import * as utils from '../utils';
 /**
  * base64url charset
  */
-export const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+export const charset =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 
 /**
  * Function to convert from base10 to base64url

@@ -1,6 +1,4 @@
-import { expect } from 'chai';
-
-import { commonTestsFrom, commonTestsTo } from '../common';
+import { commonTestsFrom, commonTestsTo } from '../../test-utils/common.test';
 import { charset, convertFrom, convertTo } from '../../src/builtins/base64';
 
 describe('convert from base64', () => {
@@ -18,15 +16,15 @@ describe('convert from base64', () => {
 
   tests.forEach(({ output, input }) => {
     it(`should return "${output}" when converting from ${input}`, () => {
-      expect(convertFrom(input)).to.equal(output);
+      expect(convertFrom(input)).toEqual(output);
     });
   });
 });
 
 describe('convert to base64', () => {
   const tests: {
-    input: number,
-    output: string,
+    input: number;
+    output: string;
   }[] = [
     ...commonTestsTo(charset),
     {
@@ -37,7 +35,7 @@ describe('convert to base64', () => {
 
   tests.forEach(({ input, output }) => {
     it(`should return "${output}" when converting from ${input}`, () => {
-      expect(convertTo(input)).to.equal(output);
+      expect(convertTo(input)).toEqual(output);
     });
   });
 });

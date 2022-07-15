@@ -10,41 +10,43 @@
   "license": "MIT",
   "scripts": {
     "build": "shx rm -rf dist && tsc -p tsconfig.build.json",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "docs": "shx rm -rf docs && typedoc --gitRevision master --readme none --tsconfig tsconfig.build.json --plugin typedoc-plugin-markdown --namedAnchors --hideBreadcrumbs",
-    "lint": "eslint --ext .ts src/.",
-    "test": "shx rm -rf .nyc_output coverage && nyc mocha -r ts-node/register test/**/*.ts test/*.ts",
-    "test:single": "mocha -r ts-node/register",
-    "prepare": "yarn build",
+    "lint": "eslint --cache --fix src",
+    "format": "prettier --write 'src/**/*'",
+    "test": "shx rm -rf coverage && yarn jest src",
+    "test:single": "yarn jest",
+    "prepare": "husky install",
     "prepublishOnly": "yarn lint && yarn test",
     "preversion": "yarn lint && yarn test && yarn build",
     "version": "yarn docs && git add .",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {},
   "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@types/chai": "^4.2.11",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@types/expect": "^24.3.0",
-    "@types/mocha": "^7.0.2",
-    "@types/node": "^13.11.1",
-    "@typescript-eslint/eslint-plugin": "^2.27.0",
-    "@typescript-eslint/parser": "^2.27.0",
-    "chai": "^4.2.0",
-    "coveralls": "^3.0.11",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-typescript": "^7.2.1",
-    "eslint-plugin-import": "^2.20.2",
-    "husky": "^4.2.5",
-    "mocha": "^7.1.1",
-    "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^15.0.1",
-    "shx": "^0.3.2",
-    "ts-node": "^8.8.2",
-    "ts-node-dev": "^1.0.0-pre.44",
-    "typedoc": "^0.17.4",
-    "typedoc-plugin-markdown": "^2.2.17",
-    "typescript": "^3.8.3"
+    "@types/jest": "^28.1.5",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.6.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "shx": "^0.3.4",
+    "ts-jest": "^28.0.6",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typedoc": "^0.23.7",
+    "typedoc-plugin-markdown": "^3.13.3",
+    "typescript": "^4.7.4"
   },
   "keywords": [
     "convert",
@@ -61,9 +63,7 @@
   "files": [
     "/dist"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run test && npm run build"
-    }
+  "engines": {
+    "node": ">=16"
   }
 }

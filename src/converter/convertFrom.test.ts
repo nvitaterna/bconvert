@@ -1,7 +1,6 @@
-import { expect } from 'chai';
-import { convertFrom } from '../src';
-import { commonTestsFrom as commonTests } from './common';
-import { charset } from '../src/builtins/binary';
+import { convertFrom } from '..';
+import { commonTestsFrom as commonTests } from '../../test-utils/common.test';
+import { charset } from '../builtins/binary';
 
 describe('convertFrom Convert To', () => {
   describe('binary', () => {
@@ -25,15 +24,20 @@ describe('convertFrom Convert To', () => {
     tests.forEach(({ output, input }) => {
       if (input.includes('.')) {
         it('should throw error for trying to convert a fraction', () => {
-          expect(() => convert(input)).to.throw();
+          expect(() => convert(input)).toThrow();
         });
-      } else if (!input.replace('-', '').split('').every((x) => charset.includes(x))) {
+      } else if (
+        !input
+          .replace('-', '')
+          .split('')
+          .every((x) => charset.includes(x))
+      ) {
         it('should throw error for trying to convert characters that are not in the base', () => {
-          expect(() => convert(input)).to.throw();
+          expect(() => convert(input)).toThrow();
         });
       } else {
         it(`should return "${output}" when converting from ${input}`, () => {
-          expect(convert(input)).to.equal(output);
+          expect(convert(input)).toEqual(output);
         });
       }
     });

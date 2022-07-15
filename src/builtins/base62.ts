@@ -3,7 +3,8 @@ import * as utils from '../utils';
 /**
  * base62 charset 0-9 A-Z a-z
  */
-export const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+export const charset =
+  '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
 /**
  * Function to convert from base10 to base62

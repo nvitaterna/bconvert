@@ -3,7 +3,8 @@ import * as utils from '../utils';
 /**
  * base64 charset
  */
-export const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+export const charset =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 /**
  * Function to convert from base10 to base64

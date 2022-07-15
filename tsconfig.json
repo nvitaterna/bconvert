@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "outDir": "dist",
-    "rootDirs": ["src", "test"],
+    "rootDirs": ["src", "test-utils"],
     "strict": true,
     "esModuleInterop": true,
     "sourceMap": true,
@@ -11,17 +11,15 @@
     "emitDecoratorMetadata": true,
     "declaration": true
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
+  "exclude": ["node_modules", "dist"],
   "typedocOptions": {
     "mode": "modules",
     "out": "docs",
     "exclude": [
       "**/index.ts",
       "src/builtins/index.ts",
-      "src/utils/index.ts"
+      "src/utils/index.ts",
+      "**/*.test.ts"
     ],
     "excludePrivate": true,
     "readme": "none",

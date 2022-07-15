@@ -15,7 +15,6 @@
     "test": "shx rm -rf coverage && yarn jest src",
     "test:single": "yarn jest",
     "prepare": "husky install",
-    "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release"
   },
   "dependencies": {},

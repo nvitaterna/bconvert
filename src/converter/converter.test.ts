@@ -1,24 +1,24 @@
-import { expect } from 'chai';
-import { Converter } from '../src';
-import { charset as base64 } from '../src/builtins/base64';
+import Converter from './';
+import { charset as base64 } from '../builtins/base64';
 
 describe('Converter convert to base16', () => {
   const charsetA = '0123456789ABCDEF';
   describe('from binary', () => {
     const charsetB = '01';
-    const converter = new Converter(charsetA, charsetB/* , 10 */);
+    const converter = new Converter(charsetA, charsetB /* , 10 */);
     const tests = [
       {
         input: '1100',
         output: 'C',
-      }, {
+      },
+      {
         input: '111001',
         output: '39',
       },
     ];
     tests.forEach(({ output, input }) => {
       it(`should return "${output}" when converting from ${input}`, () => {
-        expect(converter.convertTo(input)).to.equal(output);
+        expect(converter.convertTo(input)).toEqual(output);
       });
     });
   });
@@ -33,14 +33,15 @@ describe('Converter convert from base8', () => {
       {
         input: 'I/',
         output: '1077',
-      }, {
+      },
+      {
         input: 'BA',
         output: '100',
       },
     ];
     tests.forEach(({ output, input }) => {
       it(`should return "${output}" when converting from ${input}`, () => {
-        expect(converter.convertFrom(input)).to.equal(output);
+        expect(converter.convertFrom(input)).toEqual(output);
       });
     });
   });

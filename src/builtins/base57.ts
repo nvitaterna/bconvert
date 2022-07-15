@@ -3,7 +3,8 @@ import * as utils from '../utils';
 /**
  * base57 charset 2-9 A-H J-N P-Z a-k m-z
  */
-export const charset = '23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+export const charset =
+  '23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
 
 /**
  * Function to convert from base10 to base57

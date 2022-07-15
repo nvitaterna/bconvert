@@ -1,6 +1,5 @@
-import { expect } from 'chai';
-import { convertTo } from '../src';
-import { commonTestsTo as commonTests } from './common';
+import { convertTo } from '../';
+import { commonTestsTo as commonTests } from '../../test-utils/common.test';
 
 const binary = '01';
 
@@ -22,11 +21,11 @@ describe('convertTo', () => {
     tests.forEach(({ input, output }) => {
       if (input.toString().includes('.')) {
         it('should throw error for trying to convert a fraction', () => {
-          expect(() => convert(input)).to.throw();
+          expect(() => convert(input)).toThrow();
         });
       } else {
         it(`should return "${output}" when converting from ${input}`, () => {
-          expect(convert(input)).to.equal(output);
+          expect(convert(input)).toEqual(output);
         });
       }
     });

@@ -1,9 +1,0 @@
-exclude:
-  - test
-  - dist
-reporter:
-  - lcov
-  - text
-all: true
-extends: '@istanbuljs/nyc-config-typescript'
-

@@ -8,10 +8,7 @@ export default class Converter {
    * @param to - what convertTo will convert to
    * @param from - what convertFrom will convert to
    */
-  constructor(
-    private to: string,
-    private from: string,
-  ) { }
+  constructor(private to: string, private from: string) {}
 
   /**
    * Function to convert to the `to` number base from the `from` number base

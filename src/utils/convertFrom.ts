@@ -18,7 +18,9 @@ export default function convertFrom(value: number | string, charset: string) {
 
   absValue.split('').forEach((valChar) => {
     if (!charset.includes(valChar)) {
-      throw new Error(`Value must only consist of characters from the given charset. "${valChar}" is not in ${charset}`);
+      throw new Error(
+        `Value must only consist of characters from the given charset. "${valChar}" is not in ${charset}`,
+      );
     }
   });
 

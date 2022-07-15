@@ -1,13 +1,11 @@
-import { expect } from 'chai';
+import { commonTestsFrom, commonTestsTo } from '../../test-utils/common.test';
+import { charset, convertFrom, convertTo } from '../../src/builtins/octal';
 
-import { commonTestsFrom, commonTestsTo } from '../common';
-import { charset, convertFrom, convertTo } from '../../src/builtins/base62';
-
-describe('convert from base62', () => {
+describe('convert from octal', () => {
   const tests = [
     ...commonTestsFrom(charset),
     {
-      input: '-LZ',
+      input: '-2471',
       output: -1337,
     },
     // {
@@ -18,26 +16,26 @@ describe('convert from base62', () => {
 
   tests.forEach(({ output, input }) => {
     it(`should return "${output}" when converting from ${input}`, () => {
-      expect(convertFrom(input)).to.equal(output);
+      expect(convertFrom(input)).toEqual(output);
     });
   });
 });
 
-describe('convert to base62', () => {
+describe('convert to octal', () => {
   const tests: {
-    input: number,
-    output: string,
+    input: number;
+    output: string;
   }[] = [
     ...commonTestsTo(charset),
     {
-      input: -1337,
-      output: '-LZ',
+      input: 420,
+      output: '644',
     },
   ];
 
   tests.forEach(({ input, output }) => {
     it(`should return "${output}" when converting from ${input}`, () => {
-      expect(convertTo(input)).to.equal(output);
+      expect(convertTo(input)).toEqual(output);
     });
   });
 });

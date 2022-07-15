@@ -1,6 +1,4 @@
-import { expect } from 'chai';
-
-import { commonTestsFrom, commonTestsTo } from '../common';
+import { commonTestsFrom, commonTestsTo } from '../../test-utils/common.test';
 import { charset, convertFrom, convertTo } from '../../src/builtins/base64url';
 
 describe('convert from base64url', () => {
@@ -17,17 +15,22 @@ describe('convert from base64url', () => {
   ];
 
   // can't do negative or decimals for base64url
-  tests.filter(({ output }) => !(output < 0 || output.toString().split('.')[1] !== undefined)).forEach(({ output, input }) => {
-    it(`should return "${output}" when converting from ${input}`, () => {
-      expect(convertFrom(input)).to.equal(output);
+  tests
+    .filter(
+      ({ output }) =>
+        !(output < 0 || output.toString().split('.')[1] !== undefined),
+    )
+    .forEach(({ output, input }) => {
+      it(`should return "${output}" when converting from ${input}`, () => {
+        expect(convertFrom(input)).toEqual(output);
+      });
     });
-  });
 });
 
 describe('convert to base64url', () => {
   const tests: {
-    input: number,
-    output: string,
+    input: number;
+    output: string;
   }[] = [
     ...commonTestsTo(charset),
     {
@@ -39,11 +42,11 @@ describe('convert to base64url', () => {
   tests.forEach(({ input, output }) => {
     if (input < 0 || input.toString().split('.')[1] !== undefined) {
       it('should throw error for trying to convert invalid number', () => {
-        expect(() => convertTo(input)).to.throw();
+        expect(() => convertTo(input)).toThrow();
       });
     } else {
       it(`should return "${output}" when converting from ${input}`, () => {
-        expect(convertTo(input)).to.equal(output);
+        expect(convertTo(input)).toEqual(output);
       });
     }
   });

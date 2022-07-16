@@ -29,12 +29,13 @@ Yarn
 
 ## Documentation
 
+
 ```js
 import bconvert from 'bconvert';
 ```
-or  
+or
 ```js
-import bconvert from 'bconvert';
+const bconvert = require('bconvert');
 ```
 
 After requiring or importing bconvert you have access to the following:

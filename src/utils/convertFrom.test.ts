@@ -1,4 +1,4 @@
-import { convertFrom } from '..';
+import convertFrom from './convertFrom';
 import { commonTestsFrom as commonTests } from '@test-utils/common.test';
 import { charset } from '../builtins/binary';
 
